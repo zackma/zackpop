@@ -1,0 +1,51 @@
+
+/*弹窗样式default*/
+
+#musk{
+	width:100%;
+	background-color:#fff;
+	opacity:0.8;
+	filter:alpha(opacity=80);
+	z-index:99;
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+
+#msgFram{
+	width:280px;
+	position:absolute;
+	border:1px solid #66d9ef;
+	border-radius:8px;
+	background-color:#63bcdf;
+	z-index:999;
+}
+
+li{
+	list-style-type:none;
+	text-align:center;
+	display:block;
+	color:#ccc;
+	/*font-weight:bold;*/
+}
+
+.msg{
+	font-size:16px;
+	font-family:"cursive","comic sans ms","Verdana","Microsoft YaHei";
+	padding:5px 2px;
+	border-bottom:1px solid #5a5a5a;
+}
+
+.btn{
+	height:30px;
+}
+
+.doOk{
+	font-family:"cursive","Microsoft YaHei";
+	line-height:30px;
+	background-color:#5a5a5a;
+	padding:2px 3px;
+	border-radius:3px;
+	text-align:center;
+	cursor:default;
+}

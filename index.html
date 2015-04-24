@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>zackPop</title>
+	<meta charset = "utf-8"/>
+	<script type="text/javascript" src="js/jquery-2.1.3.js"></script>	
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link id="themes" rel="stylesheet" type="text/css" href="">
+</head>
+<body>
+    <div id="header">
+        <div class="inner">
+            <a href="https://github.com/zackma" target="_blank"><span class="gitcat">View on GitHub</span></a>
+            <h1>zackPop</h1>
+            <h2>May it be a personalized popup plugin.</h2>
+        </div>
+    </div>
+
+    <div id="container">
+        <section id="alert" class="inner">
+            <div class="about">
+                <h2>关于zackPop：</h2>
+                <p>写zackpop的灵感来自张鑫旭大神的"zxxfile"和贤心大神的"layer"，实质就是把弹窗的框架和样式分离开，也就是zxxfile的骨肉分离，希望这会是一个简洁的消息弹窗插件。zackPop将持续不定期迭代，希望能和更多人分享，也欢迎更多Web前端攻城狮加入进来一起完善。</p>
+            </div>
+            <div class="Demo">
+                <h2>Demo of function "alert"</h2>
+                <span class="test">Click for Testing</span>
+            </div>
+            <h2>依赖</h2>
+            <span>jQuery</span>
+            <h2>包含</h2>
+            <h3>JS文件</h3>
+            <div class="i-code"></div>  
+            <h2>初始化</h2>    
+            <span>这一步也就是为我们的弹窗框架加入骨肉（css）</span>
+            <h3>调用init方法</h3>
+            <div class="qt-code"></div>       
+            <span ><i>注：</i>在没有自定义css样式，未初始化css的情况下，zackpop将调用默认css样式</span>    
+            <h2>调用弹窗</h2>   
+            <span>目前弹窗只扩展了alert方法，后续迭代中会加入其它方法。弹窗调用只需任意实例化一个jQuery对象然后调用alert方法即可。例如：</span>
+            <div class="cl-code"></div>
+            <span>或者：</span>
+            <div class="cll-code"></div>
+        </section>
+    </div>
+    
+    <div id="footer">
+        <div class="info inner">
+            <span>欢迎交流：</span>
+            <p>zack ma<p>
+            <p><i>Email:</i>chattmazio@gmail.com<p>
+            <p><i>QQ:</i>804532840<p>
+            <div class="foot">Version : 1.0 -- 20150423</div> 
+        </div>
+    </div>
+
+    <script type="text/javascript">
+       
+        $(function(){
+
+            //css["blue"] = "blue.css";
+
+            //zackpop.init("blue");     //Initialize your css stylesheet here.
+
+            $(".test").click(function(){                
+                $(window).alert("this is a funny story!");
+            });
+        });
+    </script>
+
+    <script type="text/javascript" src="js/zackpop.js"></script>
+</body>
+</html>
