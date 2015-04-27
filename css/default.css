@@ -14,7 +14,7 @@
 
 #msgFram{
 	width:280px;
-	position:absolute;
+	position:fixed;
 	border:1px solid #66d9ef;
 	border-radius:8px;
 	background-color:#282742;
