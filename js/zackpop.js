@@ -5,8 +5,13 @@
 
 var flag = false;   //Set a flag for function zackpop.init(). 
 
-var zackpop = {
+//Define a css object where you can also add more object members(css) for your popup.
+var css = {
+    "default":"default.css",
+    //More themes go here......       
+};        
 
+var zackpop = {
     "version":"1.0",
     "date":"20150423",
     
@@ -21,12 +26,6 @@ var zackpop = {
 if(!flag){
     $('#themes').attr('href','css/default.css');
 }
-
-//Define a css object where you can also add more object members(css) for your popup.
-var css = {
-    "default":"default.css",
-    //More themes go here......       
-};        
 
 ;(function($){                      
 
@@ -74,7 +73,6 @@ var css = {
 
             $('#msgFram').focus();
             $(window).click(function(){return false;});
-
         }              
     });
 })(jQuery);
