@@ -23,8 +23,9 @@
                 <p>写zackpop的灵感来自张鑫旭大神的"zxxfile"和贤心大神的"layer"，实质就是把弹窗的框架和样式分离开，也就是zxxfile的骨肉分离，希望这会是一个简洁的消息弹窗插件。zackPop将持续不定期迭代，希望能和更多人分享，也欢迎更多Web前端攻城狮加入进来一起完善。</p>
             </div>
             <div class="Demo">
-                <h2>Demo of function "alert"</h2>
-                <span class="test">Click for Testing</span>
+                <h2>Demo of function "alert","confirm"</h2>
+                <span class="test alert">Click for alert</span>
+                <span class="test confirm">Click for confirm</span>
             </div>
             <h2>依赖</h2>
             <span>jQuery</span>
@@ -65,9 +66,14 @@
 
             //zackpop.init("blue");     //Initialize your css stylesheet here.
 
-            $(".test").click(function(){                
+            $(".alert").click(function(){                
                 $(window).alert("this is a funny story!");
             });
+
+            /*$(".confirm").click(function(){
+                $(window).confirm("It's easy right?");              
+            });*/
+
         });
     </script>
 

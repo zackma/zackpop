@@ -40,11 +40,12 @@ li{
 	height:30px;
 }
 
-.doOk{
+.doOk,.doCancel{
 	font-family:"cursive","Microsoft YaHei";
 	line-height:30px;
 	background-color:#5a5a5a;
 	padding:2px 3px;
+	margin: 0 6px;
 	border-radius:3px;
 	text-align:center;
 	cursor:default;
