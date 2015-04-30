@@ -16,9 +16,18 @@ var css = {
 };        
 
 var zackpop = {
-    "version":"1.0",
+    "version":"1.1",
     "date":"20150423",
-    
+    "function":"[alert(str,okCB),confirm(str,okCB,canCB)]",
+    "perameter":"[{'str':'your message'},{'okCB':'callback function for OK button'},{'canCB':'callback function for Cancel button'}]",
+    //show detail information of zackpop
+    det:function(){
+        for(var key in zackpop){
+            if(typeof(zackpop[key]) == 'string'){
+                console.log(key+':'+zackpop[key]);
+            }
+        }
+    },   
     //function to initialize popup theme.
     init:function (theme){
        $('#themes').attr('href','css/'+ css[theme]/*Your css path here*/ );  //add popup stylesheet
