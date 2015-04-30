@@ -62,14 +62,13 @@ if(!flag){
                 $("#musk").css({"height":docHeight});
             }     
         },
-        //Remove popup :
+        //Remove popup by clicking musk or pressing 'enter' key :
         remove:function(){
             if($('#musk,#msgFram').length != 0){
                 //Click events
-                $('.doOk,#musk').on('click',function(){
+                $('#musk').on('click',function(){
                     $('#musk,#msgFram').remove();
                 });
-
                 //Knock 'Enter' key to remove popup.
                 $(window).keydown(function(e){
                     if(e.keyCode == '13'){
@@ -82,13 +81,32 @@ if(!flag){
 
     $.fn.extend({          
         
-        alert:function(str){    
-
+        alert:function(str,okCB){    
             popup.show(str);
             popup.remove();
-
+            if($('#musk,#msgFram').length != 0){
+                $('.doOk').on('click',function(){
+                    okCB();
+                    $('#musk,#msgFram').remove();
+                });
+            }
         },         
 
-        confirm:function(str){},
+        confirm:function(str,okCB,canCB){
+            popup.show(str);
+            $('.btn').append('<span class="doCancel">取 消</sapn>');
+            popup.remove();
+            if($('#musk,#msgFram').length != 0){
+                $('.doOk').on('click',function(){
+                    okCB();
+                    $('#musk,#msgFram').remove();
+                });
+                $('.doCancel').on('click',function(){
+                    canCB();
+                    $('#musk,#msgFram').remove();
+                });
+            }
+        },
+
     });
 })(jQuery);

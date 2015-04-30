@@ -70,9 +70,13 @@
                 $(window).alert("this is a funny story!");
             });
 
-            /*$(".confirm").click(function(){
-                $(window).confirm("It's easy right?");              
-            });*/
+            $(".confirm").click(function(){
+                $(window).confirm("It's easy right?",function(){
+                    console.log('your choice is sure');
+                },function(){
+                    console.log('your choice is cancel');
+                });             
+            });
 
         });
     </script>
