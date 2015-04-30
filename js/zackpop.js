@@ -49,11 +49,10 @@ if(!flag){
     var docHeight = $(document).height() + 'px';
     var framTop = $(window).height()-85-($(window).height()*0.618) + 'px' ; //Consider to The Golden Ratio in the direction of y axis.
     
-    $.fn.extend({          
-        
-        alert:function(str){
-                                          
-            //Show popup :
+    //basic function for popup :
+    var popup = {
+        //Show popup :
+        show:function(str){         
             if($('#musk,#msgFram').length == 0){      //Make sure there is no popup before executing append.
                 $('body').append(musk + msgFram);  
                 $('.msg').html(str);
@@ -61,10 +60,12 @@ if(!flag){
                 //Set postion of msgFram and make musk cover the whole screen.     
                 $("#msgFram").css({"left":dist,"top":framTop});                        
                 $("#musk").css({"height":docHeight});
-            }               
-
-            (function(){
-                //Click the 'OK' button and musk to remove popup.
+            }     
+        },
+        //Remove popup :
+        remove:function(){
+            if($('#musk,#msgFram').length != 0){
+                //Click events
                 $('.doOk,#musk').on('click',function(){
                     $('#musk,#msgFram').remove();
                 });
@@ -74,11 +75,18 @@ if(!flag){
                     if(e.keyCode == '13'){
                         $('#musk,#msgFram').remove();
                     }
-                }); 
-            })()
+                });  
+            }  
+        },
+    };
 
-            $('#msgFram').focus();
-            $(window).click(function(){return false;});
+    $.fn.extend({          
+        
+        alert:function(str){    
+
+            popup.show(str);
+            popup.remove();
+
         },         
 
         confirm:function(str){},
