@@ -83,38 +83,43 @@ if(!flag){
                     if(e.keyCode == '13'){
                         $('#musk,#msgFram').remove();
                     }
-                });  
+                }); 
+                //Click 'OK' key to remove popup.
+                if($('.doOk')){
+                    $('.doOk').on('click',function(e){
+                        if(e.target == $('.doOk')[0]){
+                            console.log(true);
+                            $('#musk,#msgFram').remove();
+                        }                       
+                    });
+                }
+                //Click 'Cancel' key to remove popup.
+                if($('.doCancel')){
+                    $('.doCancel').on('click',function(e){
+                        if(e.target == $('.doCancel')[0]){
+                            console.log(false);
+                            $('#musk,#msgFram').remove();
+                        }
+                        
+                    });
+                }  
             }  
         },
     };
 
     $.fn.extend({          
         
-        alert:function(str,okCB){    
+        alert:function(str,callback){    
             popup.show(str);
             popup.remove();
-            if($('#musk,#msgFram').length != 0){
-                $('.doOk').on('click',function(){
-                    okCB();
-                    $('#musk,#msgFram').remove();
-                });
-            }
+            if(callback){callback()}
         },         
 
-        confirm:function(str,okCB,canCB){
+        confirm:function(str,callback){
             popup.show(str);
             $('.btn').append('<span class="doCancel">取 消</sapn>');
             popup.remove();
-            if($('#musk,#msgFram').length != 0){
-                $('.doOk').on('click',function(){
-                    okCB();
-                    $('#musk,#msgFram').remove();
-                });
-                $('.doCancel').on('click',function(){
-                    canCB();
-                    $('#musk,#msgFram').remove();
-                });
-            }
+            if(callback){callback()}
         },
 
     });
