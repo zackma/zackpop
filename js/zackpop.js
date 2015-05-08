@@ -72,7 +72,7 @@ if(!flag){
             }     
         },
         //Remove popup by clicking musk or pressing 'enter' key :
-        remove:function(){
+        remove:function(callback){
             if($('#musk,#msgFram').length != 0){
                 //Click events
                 $('#musk').on('click',function(){
@@ -88,6 +88,7 @@ if(!flag){
                 if($('.doOk')){
                     $('.doOk').on('click',function(e){
                         if(e.target == $('.doOk')[0]){
+                            if(callback){callback()}
                             console.log(true);
                             $('#musk,#msgFram').remove();
                         }                       
@@ -99,6 +100,7 @@ if(!flag){
                         if(e.target == $('.doCancel')[0]){
                             console.log(false);
                             $('#musk,#msgFram').remove();
+                            return false;
                         }
                         
                     });
@@ -107,20 +109,16 @@ if(!flag){
         },
     };
 
-    $.fn.extend({          
-        
+    $.fn.extend({                 
         alert:function(str,callback){    
             popup.show(str);
-            popup.remove();
-            if(callback){callback()}
+            popup.remove(callback);
         },         
-
         confirm:function(str,callback){
+            var that = this;
             popup.show(str);
             $('.btn').append('<span class="doCancel">取 消</sapn>');
-            popup.remove();
-            if(callback){callback()}
+            popup.remove(callback);
         },
-
     });
 })(jQuery);

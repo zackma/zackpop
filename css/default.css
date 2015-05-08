@@ -36,6 +36,22 @@ li{
 	border-bottom:1px solid #5a5a5a;
 }
 
+/*
+.ipt{
+	padding:3px 0;
+	border-bottom:1px solid #5a5a5a;
+}
+
+.iptFrm{
+	font-size:16px;
+	font-family:"cursive","comic sans ms","Verdana","Microsoft YaHei";
+	width:95%;
+	padding:1px 3px;	
+	border-radius: 3px;
+	background-color:#eee;
+}
+*/
+
 .btn{
 	height:30px;
 }
